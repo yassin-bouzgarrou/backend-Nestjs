@@ -1,4 +1,4 @@
-#room Booking Backend with NestJS, Authentication, Passport, Docker, Prisma ORM, and PostgreSQL
+# Room Booking Backend with NestJS, Authentication, Passport, Docker, Prisma ORM, and PostgreSQL
 
 This is the backend component of a hotel booking application built with NestJS. It includes authentication functionality using Passport and JWT (JSON Web Tokens), and it utilizes Docker for containerization, Prisma ORM for database operations, and PostgreSQL as the database.
 
