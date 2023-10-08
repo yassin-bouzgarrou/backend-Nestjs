@@ -13,13 +13,9 @@ This is the backend component of a hotel booking application built with NestJS. 
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
 - [Authentication](#authentication)
-- [Routes](#routes)
-- [Docker](#docker)
 - [Prisma ORM](#prisma-orm)
 - [PostgreSQL Database](#postgresql-database)
-- [Deployment](#deployment)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -45,7 +41,10 @@ Before you begin, ensure you have met the following requirements:
    ```bash
    git clone https://github.com/yassin-bouzgarrou/hotel-booking-backend.git
 
+## Authentication
 
+-User registration and login with JWT authentication are implemented to secure your API endpoints.
+- You can customize authentication and authorization logic in the auth module.
 
 Contributing
 Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
