@@ -24,7 +24,7 @@ This is the backend component of a hotel booking application built with NestJS. 
 - CRUD operations for hotel bookings.
 - Docker containerization for easy deployment.
 - Database operations using Prisma ORM and PostgreSQL.
-- ...
+
 
 ## Prerequisites
 
