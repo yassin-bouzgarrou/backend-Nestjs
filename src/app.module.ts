@@ -12,7 +12,7 @@ import { UserModule } from './user/user.module';
   imports: [AuthModule, RoomModule, RentModule, PrismaModule, ConfigModule.forRoot({
     isGlobal:true
   }), UserModule],
-  controllers: [UserController],
+
 
 })
 export class AppModule {}

@@ -9,34 +9,27 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
 // schema.prisma
 
 // schema.prisma
 
 model User {
-  user_id         Int       @id @default(autoincrement())
-  username        String    
-  email           String  @unique
+  user_id         Int      @id @default(autoincrement())
+  username        String
+  email           String   @unique
   password        String
   profile_picture String?
-  date_joined     DateTime  @default(now())
-  
+  date_joined     DateTime @default(now())
+  age Int?
+  role Role
 
-  age             Int?
+  properties Property[]
 
+  bookings Booking[]
 
-  role            Role
-
-
-  properties      Property[]
-
-
-  bookings        Booking[]
-  
-
-  reviews         Review[]
+  reviews Review[]
 }
-
 
 enum Role {
   HOST
@@ -44,7 +37,7 @@ enum Role {
 }
 
 model Property {
-  property_id         Int       @id @default(autoincrement())
+  property_id         Int     @id @default(autoincrement())
   owner_id            Int
   title               String
   description         String
@@ -54,43 +47,34 @@ model Property {
   number_of_bathrooms Int
   property_image      String?
   availability        Boolean
-  
 
-  owner               User      @relation(fields: [owner_id], references: [user_id])
+  owner User @relation(fields: [owner_id], references: [user_id])
 
+  bookings Booking[]
 
-  bookings            Booking[]
-  
-
-  reviews             Review[]
+  reviews Review[]
 }
 
 model Booking {
-  booking_id          Int       @id @default(autoincrement())
-  user_id             Int
-  property_id         Int
-  check_in_date       DateTime
-  check_out_date      DateTime
-  total_price         Float
+  booking_id     Int      @id @default(autoincrement())
+  user_id        Int
+  property_id    Int
+  check_in_date  DateTime
+  check_out_date DateTime
+  total_price    Float
 
+  user User @relation(fields: [user_id], references: [user_id])
 
-  user                User      @relation(fields: [user_id], references: [user_id])
-  
-  
-  property            Property  @relation(fields: [property_id], references: [property_id])
+  property Property @relation(fields: [property_id], references: [property_id])
 }
 
 model Review {
-  review_id           Int       @id @default(autoincrement())
-  user_id             Int
-  property_id         Int
-  rating              Int
-  comment             String
-  date_posted         DateTime
-
-  // Define a relation to the user who wrote the review
-  user                User      @relation(fields: [user_id], references: [user_id])
-  
-  // Define a relation to the property that was reviewed
-  property            Property  @relation(fields: [property_id], references: [property_id])
+  review_id   Int      @id @default(autoincrement())
+  user_id     Int
+  property_id Int
+  rating      Int
+  comment     String
+  date_posted DateTime
+  user User @relation(fields: [user_id], references: [user_id])
+  property Property @relation(fields: [property_id], references: [property_id])
 }
