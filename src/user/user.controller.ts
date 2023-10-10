@@ -1,4 +1,4 @@
-import { Controller, Get, UseGuards,Req, Patch, Body, Param } from '@nestjs/common';
+import { Controller, Get, UseGuards,Req, Patch, Body, Param, Delete } from '@nestjs/common';
 import {AuthGuard} from "@nestjs/passport"
 import { Request } from 'express';
 import { dtouser } from './dto/dto.user';
@@ -16,6 +16,12 @@ constructor(private userSercie:UserService ){}
   @Patch("edit/:id")
   updateUser(@Param('id') id: string, @Body() user:dtouser ){
     return this.userSercie.edituser(id,user)
+
+  }
+
+  @Delete("delete")
+  deleteRomm(@Param("id") id:string ){
+    
 
   }
 

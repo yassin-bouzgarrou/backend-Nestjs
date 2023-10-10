@@ -1,4 +1,5 @@
 import { IsNotEmpty, IsEmail, IsString } from 'class-validator';
+import { UserRole } from './role';
 
 export class authdto {
   @IsNotEmpty()
@@ -9,4 +10,7 @@ export class authdto {
   @IsNotEmpty()
   @IsString()
   password: string;
+  @IsNotEmpty()
+  @IsString()
+  role:UserRole 
 }

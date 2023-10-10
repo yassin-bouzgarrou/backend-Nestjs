@@ -22,7 +22,7 @@ export class AuthService {
           email: users.email,
           username: users.username,
           password: hash,
-          role: 'GUEST',
+          role: users.role
         },
       });
       delete saved.password;
