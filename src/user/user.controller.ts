@@ -9,7 +9,9 @@ import { UserService } from './user.service';
 export class UserController {
 constructor(private userSercie:UserService ){}
   @Get('info')
-  getMe(@Req() req :Request) {
+  getUserinfo(@Req() req :Request) {
+    console.log(req);
+    
     return req.user
     
   }
@@ -20,7 +22,7 @@ constructor(private userSercie:UserService ){}
   }
 
   @Delete("delete")
-  deleteRomm(@Param("id") id:string ){
+  deleteUser(@Param("id") id:string ){
     
 
   }

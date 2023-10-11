@@ -28,4 +28,16 @@ export class FeedBackService {
      }
     }
   }
+
+async Delete(id:string){
+  const deleted = await this.prisma.property.delete({
+    where: {
+      property_id: +id,
+    },
+  });
+
+  return deleted;
+}
+
+
 }
