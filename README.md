@@ -20,7 +20,7 @@ This is the backend component of a hotel booking application built with NestJS. 
 ## Features
 
 - User registration and login with JWT authentication.
-- Secure API endpoints using Passport middleware.
+- Secure API endpoints using Passport middleware and guard.
 - CRUD operations for hotel bookings.
 - Docker containerization for easy deployment.
 - Database operations using Prisma ORM and PostgreSQL.
